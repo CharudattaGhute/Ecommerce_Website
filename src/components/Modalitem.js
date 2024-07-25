@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-function Modalitem({ cart = [] }) {
+function Modalitem({ cart = [], setCart }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleRemove = (prodId) => {
+    const updatedCart = cart.filter((item) => item.prodId !== prodId);
+    setCart(updatedCart);
+  };
 
   const totalAmount = cart.reduce((acc, item) => acc + item.price, 0);
 
@@ -24,9 +29,24 @@ function Modalitem({ cart = [] }) {
           {cart.length > 0 ? (
             <>
               {cart.map((item) => (
-                <div key={item.prodId}>
-                  <h5>{item.prodName}</h5>
-                  <p>Price: ${item.price}</p>
+                <div
+                  key={item.prodId}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <div>
+                    <h5>{item.prodName}</h5>
+                    <p>Price: ${item.price}</p>
+                  </div>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => handleRemove(item.prodId)}
+                  >
+                    ❌
+                  </button>
                 </div>
               ))}
               <hr />

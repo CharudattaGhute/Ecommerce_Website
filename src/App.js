@@ -85,6 +85,7 @@ function App() {
 
   return (
     <div>
+      <Modalitem cart={cart} setCart={setCart} />
       <Navbar count={cart} cart={cart} username={username} />
 
       <Routes>
