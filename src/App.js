@@ -85,7 +85,14 @@ function App() {
 
   return (
     <div>
-      <Modalitem cart={cart} setCart={setCart} />
+      <Modalitem
+        cart={cart}
+        setCart={(newCart) => {
+          console.log("setCart called with", newCart);
+          setCart(newCart);
+        }}
+      />
+
       <Navbar count={cart} cart={cart} username={username} />
 
       <Routes>

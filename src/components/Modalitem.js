@@ -9,6 +9,7 @@ function Modalitem({ cart = [], setCart }) {
   const handleShow = () => setShow(true);
 
   const handleRemove = (prodId) => {
+    console.log("Here is product id decelared", prodId);
     const updatedCart = cart.filter((item) => item.prodId !== prodId);
     setCart(updatedCart);
   };
