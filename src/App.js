@@ -25,6 +25,11 @@ function App() {
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
   };
+  const handleRemove = (index) => {
+    console.log("Here is product id decelared", index);
+    const updatedCart = cart.filter((_, i) => i !== index);
+    setCart(updatedCart);
+  };
 
   const Products = [
     {
@@ -85,14 +90,7 @@ function App() {
 
   return (
     <div>
-      <Modalitem
-        cart={cart}
-        setCart={(newCart) => {
-          console.log("setCart called with", newCart);
-          setCart(newCart);
-        }}
-      />
-
+      <Modalitem cart={cart} handleRemove={handleRemove} />
       <Navbar count={cart} cart={cart} username={username} />
 
       <Routes>
