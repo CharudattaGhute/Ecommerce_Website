@@ -2,13 +2,19 @@
 body[data-theme="light"] {
   --bg-color: #ffffff;
   --text-color: #2b2929;
-  --icon-color: #000000;
+  --button-bg: #007bff;
+  --button-text: #ffffff;
+  --card-bg: #f8f9fa;
+  --card-text: #343a40;
 }
 
 body[data-theme="dark"] {
   --bg-color: #212020;
   --text-color: #ffffff;
-  --icon-color: #ffffff;
+  --button-bg: #343a40;
+  --button-text: #ffffff;
+  --card-bg: #2c2c2c;
+  --card-text: #ffffff;
 }
 
 body {
@@ -16,38 +22,44 @@ body {
   color: var(--text-color);
 }
 
-.navbar {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-.navbar .nav-link {
-  color: var(--text-color);
-}
-
-.navbar .nav-link:hover {
-  color: var(--bg-color);
-}
-
 .btn-primary {
-  background-color: var(--text-color);
-  color: var(--bg-color);
+  background-color: var(--button-bg);
+  color: var(--button-text);
 }
 
 .btn-primary:hover {
-  background-color: var(--bg-color);
+  background-color: var(--button-text);
+  color: var(--button-bg);
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.col-md-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h5, p, h4, h3 {
   color: var(--text-color);
-}
-
-.user-info {
-  color: var(--text-color);
-}
-
-.fas {
-  color: var(--icon-color);
-}
-
-.badge {
-  background-color: var(--text-color);
-  color: var(--bg-color);
 }

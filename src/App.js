@@ -5,7 +5,8 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Register from "./components/Register";
 import Cart from "./components/Cart";
-import Modalitem from "./components/Modalitem";
+import ProductDetails from "./components/ProductDetails";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -25,10 +26,9 @@ function App() {
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
   };
+
   const handleRemove = (index) => {
-    console.log("Here is product id decelared", index);
-    const updatedCart = cart.filter((_, i) => i !== index);
-    setCart(updatedCart);
+    setCart((prevCart) => prevCart.filter((_, i) => i !== index));
   };
 
   const Products = [
@@ -90,7 +90,6 @@ function App() {
 
   return (
     <div>
-      <Modalitem cart={cart} handleRemove={handleRemove} />
       <Navbar count={cart} cart={cart} username={username} />
 
       <Routes>
@@ -104,16 +103,11 @@ function App() {
           path="/cart"
           element={<Cart data={Products} addToCart={addToCart} />}
         />
+        <Route
+          path="/cart/:prodId/*"
+          element={<ProductDetails data={Products} addToCart={addToCart} />}
+        />
       </Routes>
-
-      {/* <div>
-        {view === "register" && <Register onSwitch={handleSwitch} />}
-        {view === "login" && <Login onSwitch={handleSwitch} />}
-        {view === "cart" && (
-          <Cart data={Products} incrementCount={incrementCount} />
-        )}
-      </div> */}
-      <br />
     </div>
   );
 }

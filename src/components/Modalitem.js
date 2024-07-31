@@ -10,6 +10,9 @@ function Modalitem({ cart = [], handleRemove }) {
 
   const totalAmount = cart.reduce((acc, item) => acc + item.price, 0);
 
+  console.log("Modalitem render");
+  console.log("handleRemove:", handleRemove);
+
   return (
     <>
       <span variant="primary" onClick={handleShow} style={{ color: "brown" }}>
@@ -38,7 +41,10 @@ function Modalitem({ cart = [], handleRemove }) {
                   </div>
                   <button
                     className="btn btn-primary"
-                    onClick={() => handleRemove(index)}
+                    onClick={() => {
+                      console.log(index);
+                      handleRemove(index);
+                    }}
                   >
                     ❌
                   </button>
