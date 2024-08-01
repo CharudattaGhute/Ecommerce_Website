@@ -41,10 +41,7 @@ function Modalitem({ cart = [], handleRemove }) {
                   </div>
                   <button
                     className="btn btn-primary"
-                    onClick={() => {
-                      console.log(index);
-                      handleRemove(index);
-                    }}
+                    onClick={() => handleRemove(index)}
                   >
                     ❌
                   </button>

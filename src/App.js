@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Register from "./components/Register";
 import Cart from "./components/Cart";
+
 import ProductDetails from "./components/ProductDetails";
 
 import {
@@ -13,6 +14,7 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
+import Modalitem from "./components/Modalitem";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -24,11 +26,12 @@ function App() {
   };
 
   const addToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
+    setCart((cart) => [...cart, product]);
   };
 
   const handleRemove = (index) => {
-    setCart((prevCart) => prevCart.filter((_, i) => i !== index));
+    setCart((cart) => cart.filter((_, i) => i !== index));
+    console.log(index);
   };
 
   const Products = [
@@ -91,6 +94,7 @@ function App() {
   return (
     <div>
       <Navbar count={cart} cart={cart} username={username} />
+      <Modalitem cart={cart} handleRemove={handleRemove} />
 
       <Routes>
         <Route path="/" element={<Navigate to="/register" />} />
