@@ -26,7 +26,7 @@ function Modalitem({ cart = [], handleRemove }) {
         <Modal.Body>
           {cart.length > 0 ? (
             <>
-              {cart.map((item, index) => (
+              {cart.map((item, id) => (
                 <div
                   key={item.prodId}
                   style={{
@@ -41,7 +41,7 @@ function Modalitem({ cart = [], handleRemove }) {
                   </div>
                   <button
                     className="btn btn-primary"
-                    onClick={() => handleRemove(index)}
+                    onClick={() => handleRemove(id)}
                   >
                     ❌
                   </button>

@@ -29,9 +29,8 @@ function App() {
     setCart((cart) => [...cart, product]);
   };
 
-  const handleRemove = (index) => {
-    setCart((cart) => cart.filter((_, i) => i !== index));
-    console.log(index);
+  const handleRemove = (id) => {
+    setCart((cart) => cart.find((prodId) => prodId !== id));
   };
 
   const Products = [
