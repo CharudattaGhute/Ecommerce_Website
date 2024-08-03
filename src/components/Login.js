@@ -41,7 +41,7 @@ function Login() {
         width: "40%",
         height: "350px",
         marginTop: "10%",
-        backgroundColor: "aqua",
+        backgroundColor: "#EAE7DC",
         borderRadius: "20px",
       }}
     >
