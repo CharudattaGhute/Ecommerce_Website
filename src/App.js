@@ -1,12 +1,13 @@
-import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./components/Login";
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Register from "./components/Register";
 import Cart from "./components/Cart";
-
 import ProductDetails from "./components/ProductDetails";
+import "./App.css";
+import "./components/Theme.css";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   BrowserRouter as Router,
