@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Cart({ data, addToCart }) {
   return (
     <div>
-      <div className="container mt-5">
+      <div className="container mt-5" style={{ backgroundColor: "##116466" }}>
         <div className="row">
           {data.map((product) => (
             <div
