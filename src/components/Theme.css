@@ -1,20 +1,27 @@
-/* themes.css */
 body[data-theme="light"] {
-  --bg-color: #ffffff;
+  --bg-color: #F7F9FB;
   --text-color: #2b2929;
   --button-bg: #007bff;
   --button-text: #ffffff;
   --card-bg: #f8f9fa;
   --card-text: #343a40;
+  --modal-bg: #ffffff;
+  --modal-text: #000000;
+  --modal-button-bg: #007bff;
+  --modal-button-text: #ffffff;
 }
 
 body[data-theme="dark"] {
-  --bg-color: #212020;
+  --bg-color: #282c34;
   --text-color: #ffffff;
   --button-bg: #343a40;
   --button-text: #ffffff;
   --card-bg: #2c2c2c;
   --card-text: #ffffff;
+  --modal-bg: #343a40;
+  --modal-text: #ffffff;
+  --modal-button-bg: #007bff;
+  --modal-button-text: #ffffff;
 }
 
 body {
@@ -37,9 +44,32 @@ body {
   color: var(--card-text);
 }
 
-.card img {
+.modal-content {
+  background-color: var(--modal-bg);
+  color: var(--modal-text);
+}
+
+.modal-footer .btn {
+  background-color: var(--modal-button-bg);
+  color: var(--modal-button-text);
+}
+
+.modal-footer .btn:hover {
+  background-color: var(--modal-button-text);
+  color: var(--modal-button-bg);
+}
+
+.image-container {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-fluid {
   width: 100%;
   height: auto;
+  opacity: 0.9;
 }
 
 .container {
