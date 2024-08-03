@@ -9,7 +9,7 @@ const ProductDetails = ({ data = [], addToCart }) => {
     return (
       <div
         className="container"
-        style={{ marginTop: "20%", marginLeft: "800px" }}
+        style={{ marginTop: "20%", textAlign: "center" }}
       >
         Product not found
       </div>
@@ -17,11 +17,11 @@ const ProductDetails = ({ data = [], addToCart }) => {
   }
 
   return (
-    <div className="container mt-5">
+    <div className="container">
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-6" style={{ marginTop: "5%" }}>
           <img
-            className="image-fluid"
+            className="img-fluid"
             src={product.image}
             alt="Product"
             width={700}
@@ -38,24 +38,24 @@ const ProductDetails = ({ data = [], addToCart }) => {
           >
             Add to Cart
           </button>
-          <div className="container">
-            <div className="row">
-              <div className="col ml-5" style={{ marginLeft: "240px" }}>
-                <Link to="storage">
-                  <span type="button">Storage</span>
-                </Link>
-                <Link to="color" style={{ marginLeft: "20px" }}>
-                  <span type="button">Color</span>
-                </Link>
-              </div>
-              <div className="col"></div>
-            </div>
+
+          <div className="mt-4">
+            <Link to="storage" className="btn btn-link">
+              Storage
+            </Link>
+            <Link
+              to="color"
+              className="btn btn-link"
+              style={{ marginLeft: "20px" }}
+            >
+              Color
+            </Link>
           </div>
         </div>
       </div>
       <Routes>
-        <Route path="/storage" element={<Storage />} />
-        {/* <Route path="/color" element={<Color />} /> */}
+        <Route path="storage" element={<Storage />} />
+        <Route path="color" element={<Color />} />
       </Routes>
     </div>
   );
@@ -63,11 +63,41 @@ const ProductDetails = ({ data = [], addToCart }) => {
 
 function Storage() {
   return (
-    <div className="container">
+    <div
+      className="container"
+      style={{
+        border: "1px solid black",
+        width: "200px",
+        margin: "auto",
+        padding: "10px",
+        marginTop: "20px",
+      }}
+    >
       <ul>
         <li>180</li>
         <li>256</li>
         <li>1 TB</li>
+      </ul>
+    </div>
+  );
+}
+
+function Color() {
+  return (
+    <div
+      className="container"
+      style={{
+        border: "1px solid black",
+        width: "200px",
+        margin: "auto",
+        padding: "10px",
+        marginTop: "20px",
+      }}
+    >
+      <ul>
+        <li>Red</li>
+        <li>Blue</li>
+        <li>Green</li>
       </ul>
     </div>
   );
